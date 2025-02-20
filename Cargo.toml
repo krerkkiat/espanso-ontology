@@ -4,3 +4,9 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+iri_s = "0.1.58"
+oxrdf = "0.2.4"
+prefixmap = "0.1.53"
+serde = {version = "1.0.217", features = ["derive"] }
+serde_yml = "0.0.12"
+srdf = "0.1.58"
