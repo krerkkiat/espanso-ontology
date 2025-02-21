@@ -1,0 +1,301 @@
+matches:
+- trigger: :zero-dimensional-spatial-region
+  replace: zero-dimensional spatial region (bfo:BFO_0000018)
+  label: zero-dimensional spatial region (Class)
+- trigger: :site
+  replace: site (bfo:BFO_0000029)
+  label: site (Class)
+- trigger: :fiat-surface
+  replace: fiat surface (bfo:BFO_0000146)
+  label: fiat surface (Class)
+- trigger: :specifically-dependent-continuant
+  replace: specifically dependent continuant (bfo:BFO_0000020)
+  label: specifically dependent continuant (Class)
+- trigger: :object
+  replace: object (bfo:BFO_0000030)
+  label: object (Class)
+- trigger: :material-entity
+  replace: material entity (bfo:BFO_0000040)
+  label: material entity (Class)
+- trigger: :process-boundary
+  replace: process boundary (bfo:BFO_0000035)
+  label: process boundary (Class)
+- trigger: :process
+  replace: process (bfo:BFO_0000015)
+  label: process (Class)
+- trigger: :immaterial-entity
+  replace: immaterial entity (bfo:BFO_0000141)
+  label: immaterial entity (Class)
+- trigger: :history
+  replace: history (bfo:BFO_0000182)
+  label: history (Class)
+- trigger: :spatiotemporal-region
+  replace: spatiotemporal region (bfo:BFO_0000011)
+  label: spatiotemporal region (Class)
+- trigger: :temporal-region
+  replace: temporal region (bfo:BFO_0000008)
+  label: temporal region (Class)
+- trigger: :occurrent
+  replace: occurrent (bfo:BFO_0000003)
+  label: occurrent (Class)
+- trigger: :zero-dimensional-temporal-region
+  replace: zero-dimensional temporal region (bfo:BFO_0000148)
+  label: zero-dimensional temporal region (Class)
+- trigger: :fiat-line
+  replace: fiat line (bfo:BFO_0000142)
+  label: fiat line (Class)
+- trigger: :temporal-interval
+  replace: temporal interval (bfo:BFO_0000202)
+  label: temporal interval (Class)
+- trigger: :entity
+  replace: entity (bfo:BFO_0000001)
+  label: entity (Class)
+- trigger: :continuant
+  replace: continuant (bfo:BFO_0000002)
+  label: continuant (Class)
+- trigger: :continuant-fiat-boundary
+  replace: continuant fiat boundary (bfo:BFO_0000140)
+  label: continuant fiat boundary (Class)
+- trigger: :function
+  replace: function (bfo:BFO_0000034)
+  label: function (Class)
+- trigger: :independent-continuant
+  replace: independent continuant (bfo:BFO_0000004)
+  label: independent continuant (Class)
+- trigger: :temporal-instant
+  replace: temporal instant (bfo:BFO_0000203)
+  label: temporal instant (Class)
+- trigger: :object-aggregate
+  replace: object aggregate (bfo:BFO_0000027)
+  label: object aggregate (Class)
+- trigger: :quality
+  replace: quality (bfo:BFO_0000019)
+  label: quality (Class)
+- trigger: :two-dimensional-spatial-region
+  replace: two-dimensional spatial region (bfo:BFO_0000009)
+  label: two-dimensional spatial region (Class)
+- trigger: :disposition
+  replace: disposition (bfo:BFO_0000016)
+  label: disposition (Class)
+- trigger: :relational-quality
+  replace: relational quality (bfo:BFO_0000145)
+  label: relational quality (Class)
+- trigger: :fiat-point
+  replace: fiat point (bfo:BFO_0000147)
+  label: fiat point (Class)
+- trigger: :spatial-region
+  replace: spatial region (bfo:BFO_0000006)
+  label: spatial region (Class)
+- trigger: :realizable-entity
+  replace: realizable entity (bfo:BFO_0000017)
+  label: realizable entity (Class)
+- trigger: :one-dimensional-temporal-region
+  replace: one-dimensional temporal region (bfo:BFO_0000038)
+  label: one-dimensional temporal region (Class)
+- trigger: :role
+  replace: role (bfo:BFO_0000023)
+  label: role (Class)
+- trigger: :three-dimensional-spatial-region
+  replace: three-dimensional spatial region (bfo:BFO_0000028)
+  label: three-dimensional spatial region (Class)
+- trigger: :one-dimensional-spatial-region
+  replace: one-dimensional spatial region (bfo:BFO_0000026)
+  label: one-dimensional spatial region (Class)
+- trigger: :generically-dependent-continuant
+  replace: generically dependent continuant (bfo:BFO_0000031)
+  label: generically dependent continuant (Class)
+- trigger: :fiat-object-part
+  replace: fiat object part (bfo:BFO_0000024)
+  label: fiat object part (Class)
+- trigger: :has-participant-at-some-time
+  replace: has participant at some time (bfo:BFO_0000057)
+  label: has participant at some time (Object Property)
+- trigger: :occupies-spatiotemporal-region
+  replace: occupies spatiotemporal region (bfo:BFO_0000200)
+  label: occupies spatiotemporal region (Object Property)
+- trigger: :is-concretized-by-at-all-times
+  replace: is concretized by at all times (bfo:BFO_0000165)
+  label: is concretized by at all times (Object Property)
+- trigger: :generically-depends-on-at-all-times
+  replace: generically depends on at all times (bfo:BFO_0000219)
+  label: generically depends on at all times (Object Property)
+- trigger: :has-material-basis-at-all-times
+  replace: has material basis at all times (bfo:BFO_0000113)
+  label: has material basis at all times (Object Property)
+- trigger: :located-in-at-all-times
+  replace: located in at all times (bfo:BFO_0000082)
+  label: located in at all times (Object Property)
+- trigger: :proper-occurrent-part-of
+  replace: proper occurrent part of (bfo:BFO_0000138)
+  label: proper occurrent part of (Object Property)
+- trigger: :proper-continuant-part-of-at-some-time
+  replace: proper continuant part of at some time (bfo:BFO_0000175)
+  label: proper continuant part of at some time (Object Property)
+- trigger: :specifically-depends-on
+  replace: specifically depends on (bfo:BFO_0000195)
+  label: specifically depends on (Object Property)
+- trigger: :has-temporal-part
+  replace: has temporal part (bfo:BFO_0000121)
+  label: has temporal part (Object Property)
+- trigger: :is-carrier-of-at-some-time
+  replace: is carrier of at some time (bfo:BFO_0000101)
+  label: is carrier of at some time (Object Property)
+- trigger: :location-of-at-all-times
+  replace: location of at all times (bfo:BFO_0000170)
+  label: location of at all times (Object Property)
+- trigger: :has-realization
+  replace: has realization (bfo:BFO_0000054)
+  label: has realization (Object Property)
+- trigger: :spatially-projects-onto-at-some-time
+  replace: spatially projects onto at some time (bfo:BFO_0000216)
+  label: spatially projects onto at some time (Object Property)
+- trigger: :continuant-part-of-at-all-times
+  replace: continuant part of at all times (bfo:BFO_0000177)
+  label: continuant part of at all times (Object Property)
+- trigger: :has-history
+  replace: has history (bfo:BFO_0000185)
+  label: has history (Object Property)
+- trigger: :proper-temporal-part-of
+  replace: proper temporal part of (bfo:BFO_0000136)
+  label: proper temporal part of (Object Property)
+- trigger: :occurrent-part-of
+  replace: occurrent part of (bfo:BFO_0000132)
+  label: occurrent part of (Object Property)
+- trigger: :has-material-basis-at-some-time
+  replace: has material basis at some time (bfo:BFO_0000218)
+  label: has material basis at some time (Object Property)
+- trigger: :location-of-at-some-time
+  replace: location of at some time (bfo:BFO_0000124)
+  label: location of at some time (Object Property)
+- trigger: :concretizes-at-all-times
+  replace: concretizes at all times (bfo:BFO_0000164)
+  label: concretizes at all times (Object Property)
+- trigger: :temporally-projects-onto
+  replace: temporally projects onto (bfo:BFO_0000153)
+  label: temporally projects onto (Object Property)
+- trigger: :has-continuant-part-at-all-times
+  replace: has continuant part at all times (bfo:BFO_0000110)
+  label: has continuant part at all times (Object Property)
+- trigger: :generically-depends-on-at-some-time
+  replace: generically depends on at some time (bfo:BFO_0000084)
+  label: generically depends on at some time (Object Property)
+- trigger: :has-continuant-part-at-some-time
+  replace: has continuant part at some time (bfo:BFO_0000178)
+  label: has continuant part at some time (Object Property)
+- trigger: :material-basis-of-at-some-time
+  replace: material basis of at some time (bfo:BFO_0000127)
+  label: material basis of at some time (Object Property)
+- trigger: :has-last-instant
+  replace: has last instant (bfo:BFO_0000224)
+  label: has last instant (Object Property)
+- trigger: :is-carrier-of-at-all-times
+  replace: is carrier of at all times (bfo:BFO_0000220)
+  label: is carrier of at all times (Object Property)
+- trigger: :environs
+  replace: environs (bfo:BFO_0000183)
+  label: environs (Object Property)
+- trigger: :continuant-part-of-at-some-time
+  replace: continuant part of at some time (bfo:BFO_0000176)
+  label: continuant part of at some time (Object Property)
+- trigger: :occurs-in
+  replace: occurs in (bfo:BFO_0000066)
+  label: occurs in (Object Property)
+- trigger: :has-proper-temporal-part
+  replace: has proper temporal part (bfo:BFO_0000181)
+  label: has proper temporal part (Object Property)
+- trigger: :proper-continuant-part-of-at-all-times
+  replace: proper continuant part of at all times (bfo:BFO_0000137)
+  label: proper continuant part of at all times (Object Property)
+- trigger: :precedes
+  replace: precedes (bfo:BFO_0000063)
+  label: precedes (Object Property)
+- trigger: :exists-at
+  replace: exists at (bfo:BFO_0000108)
+  label: exists at (Object Property)
+- trigger: :temporal-part-of
+  replace: temporal part of (bfo:BFO_0000139)
+  label: temporal part of (Object Property)
+- trigger: :occupies-spatial-region-at-all-times
+  replace: occupies spatial region at all times (bfo:BFO_0000211)
+  label: occupies spatial region at all times (Object Property)
+- trigger: :realizes
+  replace: realizes (bfo:BFO_0000055)
+  label: realizes (Object Property)
+- trigger: :inheres-in
+  replace: inheres in (bfo:BFO_0000197)
+  label: inheres in (Object Property)
+- trigger: :has-first-instant
+  replace: has first instant (bfo:BFO_0000222)
+  label: has first instant (Object Property)
+- trigger: :has-proper-continuant-part-at-some-time
+  replace: has proper continuant part at some time (bfo:BFO_0000174)
+  label: has proper continuant part at some time (Object Property)
+- trigger: :bearer-of
+  replace: bearer of (bfo:BFO_0000196)
+  label: bearer of (Object Property)
+- trigger: :member-part-of-at-some-time
+  replace: member part of at some time (bfo:BFO_0000129)
+  label: member part of at some time (Object Property)
+- trigger: :has-member-part-at-all-times
+  replace: has member part at all times (bfo:BFO_0000172)
+  label: has member part at all times (Object Property)
+- trigger: :has-proper-occurrent-part
+  replace: has proper occurrent part (bfo:BFO_0000118)
+  label: has proper occurrent part (Object Property)
+- trigger: :has-occurrent-part
+  replace: has occurrent part (bfo:BFO_0000117)
+  label: has occurrent part (Object Property)
+- trigger: :occupies-spatial-region-at-some-time
+  replace: occupies spatial region at some time (bfo:BFO_0000210)
+  label: occupies spatial region at some time (Object Property)
+- trigger: :has-member-part-at-some-time
+  replace: has member part at some time (bfo:BFO_0000115)
+  label: has member part at some time (Object Property)
+- trigger: :material-basis-of-at-all-times
+  replace: material basis of at all times (bfo:BFO_0000163)
+  label: material basis of at all times (Object Property)
+- trigger: :occupies-temporal-region
+  replace: occupies temporal region (bfo:BFO_0000199)
+  label: occupies temporal region (Object Property)
+- trigger: :preceded-by
+  replace: preceded by (bfo:BFO_0000062)
+  label: preceded by (Object Property)
+- trigger: :is-concretized-by-at-some-time
+  replace: is concretized by at some time (bfo:BFO_0000058)
+  label: is concretized by at some time (Object Property)
+- trigger: :participates-in-at-all-times
+  replace: participates in at all times (bfo:BFO_0000166)
+  label: participates in at all times (Object Property)
+- trigger: :concretizes-at-some-time
+  replace: concretizes at some time (bfo:BFO_0000059)
+  label: concretizes at some time (Object Property)
+- trigger: :spatially-projects-onto-at-all-times
+  replace: spatially projects onto at all times (bfo:BFO_0000217)
+  label: spatially projects onto at all times (Object Property)
+- trigger: :participates-in-at-some-time
+  replace: participates in at some time (bfo:BFO_0000056)
+  label: participates in at some time (Object Property)
+- trigger: :has-proper-continuant-part-at-all-times
+  replace: has proper continuant part at all times (bfo:BFO_0000111)
+  label: has proper continuant part at all times (Object Property)
+- trigger: :first-instant-of
+  replace: first instant of (bfo:BFO_0000221)
+  label: first instant of (Object Property)
+- trigger: :specifically-depended-on-by
+  replace: specifically depended on by (bfo:BFO_0000194)
+  label: specifically depended on by (Object Property)
+- trigger: :history-of
+  replace: history of (bfo:BFO_0000184)
+  label: history of (Object Property)
+- trigger: :located-in-at-some-time
+  replace: located in at some time (bfo:BFO_0000171)
+  label: located in at some time (Object Property)
+- trigger: :last-instant-of
+  replace: last instant of (bfo:BFO_0000223)
+  label: last instant of (Object Property)
+- trigger: :member-part-of-at-all-times
+  replace: member part of at all times (bfo:BFO_0000173)
+  label: member part of at all times (Object Property)
+- trigger: :has-participant-at-all-times
+  replace: has participant at all times (bfo:BFO_0000167)
+  label: has participant at all times (Object Property)
