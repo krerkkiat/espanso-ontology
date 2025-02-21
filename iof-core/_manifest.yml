@@ -1,5 +1,5 @@
 name: "iof-core"
-title: "IOF Core Ontology"
-description: An example package to show how to host Espanso packages
+title: "IOF Core Ontology (202301)"
+description: Classes and object properties from https://spec.industrialontologies.org/ontology/core/Core/ (202301).
 version: 0.1.0
 author: Krerkkiat Chusap

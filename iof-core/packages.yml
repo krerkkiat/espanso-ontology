@@ -1,101 +1,367 @@
 matches:
-- trigger: :Core:isOutputOf
-  replace: Core:isOutputOf
-- trigger: :Core:designates
-  replace: Core:designates
-- trigger: :Core:hasQuality
-  replace: Core:hasQuality
-- trigger: :Core:prescribes
-  replace: Core:prescribes
-- trigger: :Core:qualityOf
-  replace: Core:qualityOf
-- trigger: :Core:isAchievedByAtSomeTime
-  replace: Core:isAchievedByAtSomeTime
-- trigger: :Core:describedBy
-  replace: Core:describedBy
-- trigger: :Core:hasRole
-  replace: Core:hasRole
-- trigger: :Core:hasMeasuredValueAtSomeTime
-  replace: Core:hasMeasuredValueAtSomeTime
-- trigger: :Core:isAvailableToAtSomeTime
-  replace: Core:isAvailableToAtSomeTime
-- trigger: :Core:componentPartOfAtAllTimes
-  replace: Core:componentPartOfAtAllTimes
-- trigger: :Core:describes
-  replace: Core:describes
-- trigger: :Core:isAbout
-  replace: Core:isAbout
-- trigger: :Core:isSpecifiedOutputOf
-  replace: Core:isSpecifiedOutputOf
-- trigger: :Core:hasSpecifiedOutput
-  replace: Core:hasSpecifiedOutput
-- trigger: :Core:functionOf
-  replace: Core:functionOf
-- trigger: :Core:hasDisposition
-  replace: Core:hasDisposition
-- trigger: :Core:isValueExpressionOfAtSomeTime
-  replace: Core:isValueExpressionOfAtSomeTime
-- trigger: :Core:recognizedByAtSomeTime
-  replace: Core:recognizedByAtSomeTime
-- trigger: :Core:hasValueExpressionAtAllTimes
-  replace: Core:hasValueExpressionAtAllTimes
-- trigger: :Core:hasProcessCharacteristic
-  replace: Core:hasProcessCharacteristic
-- trigger: :Core:measuresAtSomeTime
-  replace: Core:measuresAtSomeTime
-- trigger: :Core:observedByAtSomeTime
-  replace: Core:observedByAtSomeTime
-- trigger: :Core:hasCapability
-  replace: Core:hasCapability
-- trigger: :Core:hasComponentPartAtAllTimes
-  replace: Core:hasComponentPartAtAllTimes
-- trigger: :Core:isMeasuredValueOfAtSomeTime
-  replace: Core:isMeasuredValueOfAtSomeTime
-- trigger: :Core:componentPartOfAtSomeTime
-  replace: Core:componentPartOfAtSomeTime
-- trigger: :Core:measuredByAtSomeTime
-  replace: Core:measuredByAtSomeTime
-- trigger: :Core:capabilityOf
-  replace: Core:capabilityOf
+- trigger: :Core:CustomerRole
+  replace: Core:CustomerRole
+  label: Core:CustomerRole (Class)
+- trigger: :Core:Assembly
+  replace: Core:Assembly
+  label: Core:Assembly (Class)
+- trigger: :Core:MeasurementCapability
+  replace: Core:MeasurementCapability
+  label: Core:MeasurementCapability (Class)
+- trigger: :Core:Organization
+  replace: Core:Organization
+  label: Core:Organization (Class)
+- trigger: :Core:Event
+  replace: Core:Event
+  label: Core:Event (Class)
+- trigger: :Core:Agreement
+  replace: Core:Agreement
+  label: Core:Agreement (Class)
+- trigger: :Core:CommercialService
+  replace: Core:CommercialService
+  label: Core:CommercialService (Class)
+- trigger: :Core:MeasuredValueExpression
+  replace: Core:MeasuredValueExpression
+  label: Core:MeasuredValueExpression (Class)
+- trigger: :Core:Identifier
+  replace: Core:Identifier
+  label: Core:Identifier (Class)
+- trigger: :Core:BusinessFunction
+  replace: Core:BusinessFunction
+  label: Core:BusinessFunction (Class)
+- trigger: :Core:ProductProductionProcess
+  replace: Core:ProductProductionProcess
+  label: Core:ProductProductionProcess (Class)
+- trigger: :Core:MaintainableMaterialItem
+  replace: Core:MaintainableMaterialItem
+  label: Core:MaintainableMaterialItem (Class)
+- trigger: :Core:MaterialArtifact
+  replace: Core:MaterialArtifact
+  label: Core:MaterialArtifact (Class)
+- trigger: :Core:MeasurementProcess
+  replace: Core:MeasurementProcess
+  label: Core:MeasurementProcess (Class)
+- trigger: :Core:DescriptiveInformationContentEntity
+  replace: Core:DescriptiveInformationContentEntity
+  label: Core:DescriptiveInformationContentEntity (Class)
+- trigger: :Core:MeasurementInformationContentEntity
+  replace: Core:MeasurementInformationContentEntity
+  label: Core:MeasurementInformationContentEntity (Class)
+- trigger: :Core:MaterialComponent
+  replace: Core:MaterialComponent
+  label: Core:MaterialComponent (Class)
+- trigger: :Core:GroupOfAgents
+  replace: Core:GroupOfAgents
+  label: Core:GroupOfAgents (Class)
+- trigger: :Core:SellingBusinessProcess
+  replace: Core:SellingBusinessProcess
+  label: Core:SellingBusinessProcess (Class)
+- trigger: :Core:MaintainableMaterialItemRole
+  replace: Core:MaintainableMaterialItemRole
+  label: Core:MaintainableMaterialItemRole (Class)
+- trigger: :Core:Manufacturer
+  replace: Core:Manufacturer
+  label: Core:Manufacturer (Class)
+- trigger: :Core:Supplier
+  replace: Core:Supplier
+  label: Core:Supplier (Class)
+- trigger: :Core:Customer
+  replace: Core:Customer
+  label: Core:Customer (Class)
+- trigger: :Core:RawMaterial
+  replace: Core:RawMaterial
+  label: Core:RawMaterial (Class)
+- trigger: :Core:Algorithm
+  replace: Core:Algorithm
+  label: Core:Algorithm (Class)
+- trigger: :Core:MaterialProduct
+  replace: Core:MaterialProduct
+  label: Core:MaterialProduct (Class)
+- trigger: :Core:ServiceProviderRole
+  replace: Core:ServiceProviderRole
+  label: Core:ServiceProviderRole (Class)
+- trigger: :Core:AssemblyProcess
+  replace: Core:AssemblyProcess
+  label: Core:AssemblyProcess (Class)
+- trigger: :Core:MaterialState
+  replace: Core:MaterialState
+  label: Core:MaterialState (Class)
+- trigger: :Core:ManufacturerRole
+  replace: Core:ManufacturerRole
+  label: Core:ManufacturerRole (Class)
+- trigger: :Core:BuyingBusinessProcess
+  replace: Core:BuyingBusinessProcess
+  label: Core:BuyingBusinessProcess (Class)
+- trigger: :Core:ComputingProcess
+  replace: Core:ComputingProcess
+  label: Core:ComputingProcess (Class)
+- trigger: :Core:PlanSpecification
+  replace: Core:PlanSpecification
+  label: Core:PlanSpecification (Class)
+- trigger: :Core:BusinessProcess
+  replace: Core:BusinessProcess
+  label: Core:BusinessProcess (Class)
+- trigger: :Core:Buyer
+  replace: Core:Buyer
+  label: Core:Buyer (Class)
+- trigger: :Core:ActionSpecification
+  replace: Core:ActionSpecification
+  label: Core:ActionSpecification (Class)
+- trigger: :Core:DirectiveInformationContentEntity
+  replace: Core:DirectiveInformationContentEntity
+  label: Core:DirectiveInformationContentEntity (Class)
+- trigger: :Core:MaterialProductRole
+  replace: Core:MaterialProductRole
+  label: Core:MaterialProductRole (Class)
+- trigger: :Core:Capability
+  replace: Core:Capability
+  label: Core:Capability (Class)
+- trigger: :Core:PlannedProcess
+  replace: Core:PlannedProcess
+  label: Core:PlannedProcess (Class)
+- trigger: :Core:ManufacturingProcess
+  replace: Core:ManufacturingProcess
+  label: Core:ManufacturingProcess (Class)
+- trigger: :Core:BusinessOrganization
+  replace: Core:BusinessOrganization
+  label: Core:BusinessOrganization (Class)
+- trigger: :Core:CommercialServiceSpecification
+  replace: Core:CommercialServiceSpecification
+  label: Core:CommercialServiceSpecification (Class)
+- trigger: :Core:PhysicalLocationIdentifier
+  replace: Core:PhysicalLocationIdentifier
+  label: Core:PhysicalLocationIdentifier (Class)
+- trigger: :Core:ProcuringBusinessProcess
+  replace: Core:ProcuringBusinessProcess
+  label: Core:ProcuringBusinessProcess (Class)
+- trigger: :Core:MaterialResource
+  replace: Core:MaterialResource
+  label: Core:MaterialResource (Class)
+- trigger: :Core:BuyerRole
+  replace: Core:BuyerRole
+  label: Core:BuyerRole (Class)
+- trigger: :Core:SupplyingBusinessProcess
+  replace: Core:SupplyingBusinessProcess
+  label: Core:SupplyingBusinessProcess (Class)
+- trigger: :Core:Person
+  replace: Core:Person
+  label: Core:Person (Class)
+- trigger: :Core:MaterialComponentRole
+  replace: Core:MaterialComponentRole
+  label: Core:MaterialComponentRole (Class)
+- trigger: :Core:SupplierRole
+  replace: Core:SupplierRole
+  label: Core:SupplierRole (Class)
+- trigger: :Core:DesignativeInformationContentEntity
+  replace: Core:DesignativeInformationContentEntity
+  label: Core:DesignativeInformationContentEntity (Class)
+- trigger: :Core:InformationContentEntity
+  replace: Core:InformationContentEntity
+  label: Core:InformationContentEntity (Class)
+- trigger: :Core:PieceOfEquipment
+  replace: Core:PieceOfEquipment
+  label: Core:PieceOfEquipment (Class)
+- trigger: :Core:ObjectiveSpecification
+  replace: Core:ObjectiveSpecification
+  label: Core:ObjectiveSpecification (Class)
+- trigger: :Core:OrganizedGroupOfAgents
+  replace: Core:OrganizedGroupOfAgents
+  label: Core:OrganizedGroupOfAgents (Class)
+- trigger: :Core:ProcessCharacteristic
+  replace: Core:ProcessCharacteristic
+  label: Core:ProcessCharacteristic (Class)
+- trigger: :Core:OrganizationIdentifier
+  replace: Core:OrganizationIdentifier
+  label: Core:OrganizationIdentifier (Class)
+- trigger: :Core:EngineeredSystem
+  replace: Core:EngineeredSystem
+  label: Core:EngineeredSystem (Class)
+- trigger: :Core:EquipmentRole
+  replace: Core:EquipmentRole
+  label: Core:EquipmentRole (Class)
+- trigger: :Core:MaterialResourceRole
+  replace: Core:MaterialResourceRole
+  label: Core:MaterialResourceRole (Class)
+- trigger: :Core:RawMaterialRole
+  replace: Core:RawMaterialRole
+  label: Core:RawMaterialRole (Class)
+- trigger: :Core:ValueExpression
+  replace: Core:ValueExpression
+  label: Core:ValueExpression (Class)
+- trigger: :Core:CommercialServiceAgreement
+  replace: Core:CommercialServiceAgreement
+  label: Core:CommercialServiceAgreement (Class)
+- trigger: :Core:DesignSpecification
+  replace: Core:DesignSpecification
+  label: Core:DesignSpecification (Class)
+- trigger: :Core:RequirementSpecification
+  replace: Core:RequirementSpecification
+  label: Core:RequirementSpecification (Class)
+- trigger: :Core:EncodedAlgorithm
+  replace: Core:EncodedAlgorithm
+  label: Core:EncodedAlgorithm (Class)
+- trigger: :Core:ServiceProvider
+  replace: Core:ServiceProvider
+  label: Core:ServiceProvider (Class)
+- trigger: :Core:Agent
+  replace: Core:Agent
+  label: Core:Agent (Class)
+- trigger: :Core:AgentRole
+  replace: Core:AgentRole
+  label: Core:AgentRole (Class)
+- trigger: :Core:MaterialLocationChangeProcess
+  replace: Core:MaterialLocationChangeProcess
+  label: Core:MaterialLocationChangeProcess (Class)
+- trigger: :Core:System
+  replace: Core:System
+  label: Core:System (Class)
 - trigger: :Core:satisfiesRequirement
   replace: Core:satisfiesRequirement
-- trigger: :Core:isValueExpressionOfAtAllTimes
-  replace: Core:isValueExpressionOfAtAllTimes
-- trigger: :Core:denotedBy
-  replace: Core:denotedBy
-- trigger: :Core:hasFunction
-  replace: Core:hasFunction
-- trigger: :Core:hasComponentPartAtSomeTime
-  replace: Core:hasComponentPartAtSomeTime
-- trigger: :Core:denotes
-  replace: Core:denotes
-- trigger: :Core:isInputOf
-  replace: Core:isInputOf
-- trigger: :Core:processCharacteristicOf
-  replace: Core:processCharacteristicOf
+  label: Core:satisfiesRequirement (Object Property)
 - trigger: :Core:designatedBy
   replace: Core:designatedBy
-- trigger: :Core:prescribedBy
-  replace: Core:prescribedBy
-- trigger: :Core:hasValueExpressionAtSomeTime
-  replace: Core:hasValueExpressionAtSomeTime
-- trigger: :Core:requirementSatisfiedBy
-  replace: Core:requirementSatisfiedBy
-- trigger: :Core:hasInput
-  replace: Core:hasInput
-- trigger: :Core:recognizesAtSomeTime
-  replace: Core:recognizesAtSomeTime
-- trigger: :Core:observesAtSomeTime
-  replace: Core:observesAtSomeTime
-- trigger: :Core:achievesAtSomeTime
-  replace: Core:achievesAtSomeTime
-- trigger: :Core:roleOf
-  replace: Core:roleOf
-- trigger: :Core:actsOnBehalfOfAtSomeTime
-  replace: Core:actsOnBehalfOfAtSomeTime
-- trigger: :Core:hasOutput
-  replace: Core:hasOutput
-- trigger: :Core:isSubjectOf
-  replace: Core:isSubjectOf
+  label: Core:designatedBy (Object Property)
+- trigger: :Core:isInputOf
+  replace: Core:isInputOf
+  label: Core:isInputOf (Object Property)
 - trigger: :Core:dispositionOf
   replace: Core:dispositionOf
+  label: Core:dispositionOf (Object Property)
+- trigger: :Core:hasValueExpressionAtSomeTime
+  replace: Core:hasValueExpressionAtSomeTime
+  label: Core:hasValueExpressionAtSomeTime (Object Property)
+- trigger: :Core:capabilityOf
+  replace: Core:capabilityOf
+  label: Core:capabilityOf (Object Property)
+- trigger: :Core:describedBy
+  replace: Core:describedBy
+  label: Core:describedBy (Object Property)
+- trigger: :Core:hasComponentPartAtAllTimes
+  replace: Core:hasComponentPartAtAllTimes
+  label: Core:hasComponentPartAtAllTimes (Object Property)
+- trigger: :Core:hasComponentPartAtSomeTime
+  replace: Core:hasComponentPartAtSomeTime
+  label: Core:hasComponentPartAtSomeTime (Object Property)
+- trigger: :Core:componentPartOfAtAllTimes
+  replace: Core:componentPartOfAtAllTimes
+  label: Core:componentPartOfAtAllTimes (Object Property)
+- trigger: :Core:isValueExpressionOfAtSomeTime
+  replace: Core:isValueExpressionOfAtSomeTime
+  label: Core:isValueExpressionOfAtSomeTime (Object Property)
+- trigger: :Core:denotes
+  replace: Core:denotes
+  label: Core:denotes (Object Property)
+- trigger: :Core:measuredByAtSomeTime
+  replace: Core:measuredByAtSomeTime
+  label: Core:measuredByAtSomeTime (Object Property)
+- trigger: :Core:measuresAtSomeTime
+  replace: Core:measuresAtSomeTime
+  label: Core:measuresAtSomeTime (Object Property)
+- trigger: :Core:processCharacteristicOf
+  replace: Core:processCharacteristicOf
+  label: Core:processCharacteristicOf (Object Property)
+- trigger: :Core:describes
+  replace: Core:describes
+  label: Core:describes (Object Property)
+- trigger: :Core:prescribes
+  replace: Core:prescribes
+  label: Core:prescribes (Object Property)
+- trigger: :Core:hasCapability
+  replace: Core:hasCapability
+  label: Core:hasCapability (Object Property)
+- trigger: :Core:recognizedByAtSomeTime
+  replace: Core:recognizedByAtSomeTime
+  label: Core:recognizedByAtSomeTime (Object Property)
+- trigger: :Core:isAvailableToAtSomeTime
+  replace: Core:isAvailableToAtSomeTime
+  label: Core:isAvailableToAtSomeTime (Object Property)
+- trigger: :Core:recognizesAtSomeTime
+  replace: Core:recognizesAtSomeTime
+  label: Core:recognizesAtSomeTime (Object Property)
+- trigger: :Core:hasInput
+  replace: Core:hasInput
+  label: Core:hasInput (Object Property)
+- trigger: :Core:prescribedBy
+  replace: Core:prescribedBy
+  label: Core:prescribedBy (Object Property)
+- trigger: :Core:isSubjectOf
+  replace: Core:isSubjectOf
+  label: Core:isSubjectOf (Object Property)
+- trigger: :Core:hasQuality
+  replace: Core:hasQuality
+  label: Core:hasQuality (Object Property)
+- trigger: :Core:hasRole
+  replace: Core:hasRole
+  label: Core:hasRole (Object Property)
+- trigger: :Core:hasProcessCharacteristic
+  replace: Core:hasProcessCharacteristic
+  label: Core:hasProcessCharacteristic (Object Property)
+- trigger: :Core:hasSpecifiedOutput
+  replace: Core:hasSpecifiedOutput
+  label: Core:hasSpecifiedOutput (Object Property)
+- trigger: :Core:hasOutput
+  replace: Core:hasOutput
+  label: Core:hasOutput (Object Property)
+- trigger: :Core:isAbout
+  replace: Core:isAbout
+  label: Core:isAbout (Object Property)
+- trigger: :Core:hasDisposition
+  replace: Core:hasDisposition
+  label: Core:hasDisposition (Object Property)
+- trigger: :Core:requirementSatisfiedBy
+  replace: Core:requirementSatisfiedBy
+  label: Core:requirementSatisfiedBy (Object Property)
+- trigger: :Core:hasFunction
+  replace: Core:hasFunction
+  label: Core:hasFunction (Object Property)
+- trigger: :Core:isAchievedByAtSomeTime
+  replace: Core:isAchievedByAtSomeTime
+  label: Core:isAchievedByAtSomeTime (Object Property)
+- trigger: :Core:observesAtSomeTime
+  replace: Core:observesAtSomeTime
+  label: Core:observesAtSomeTime (Object Property)
+- trigger: :Core:functionOf
+  replace: Core:functionOf
+  label: Core:functionOf (Object Property)
+- trigger: :Core:hasValueExpressionAtAllTimes
+  replace: Core:hasValueExpressionAtAllTimes
+  label: Core:hasValueExpressionAtAllTimes (Object Property)
+- trigger: :Core:denotedBy
+  replace: Core:denotedBy
+  label: Core:denotedBy (Object Property)
+- trigger: :Core:componentPartOfAtSomeTime
+  replace: Core:componentPartOfAtSomeTime
+  label: Core:componentPartOfAtSomeTime (Object Property)
+- trigger: :Core:designates
+  replace: Core:designates
+  label: Core:designates (Object Property)
+- trigger: :Core:roleOf
+  replace: Core:roleOf
+  label: Core:roleOf (Object Property)
+- trigger: :Core:actsOnBehalfOfAtSomeTime
+  replace: Core:actsOnBehalfOfAtSomeTime
+  label: Core:actsOnBehalfOfAtSomeTime (Object Property)
+- trigger: :Core:isValueExpressionOfAtAllTimes
+  replace: Core:isValueExpressionOfAtAllTimes
+  label: Core:isValueExpressionOfAtAllTimes (Object Property)
+- trigger: :Core:isOutputOf
+  replace: Core:isOutputOf
+  label: Core:isOutputOf (Object Property)
+- trigger: :Core:achievesAtSomeTime
+  replace: Core:achievesAtSomeTime
+  label: Core:achievesAtSomeTime (Object Property)
+- trigger: :Core:isMeasuredValueOfAtSomeTime
+  replace: Core:isMeasuredValueOfAtSomeTime
+  label: Core:isMeasuredValueOfAtSomeTime (Object Property)
+- trigger: :Core:qualityOf
+  replace: Core:qualityOf
+  label: Core:qualityOf (Object Property)
+- trigger: :Core:hasMeasuredValueAtSomeTime
+  replace: Core:hasMeasuredValueAtSomeTime
+  label: Core:hasMeasuredValueAtSomeTime (Object Property)
+- trigger: :Core:observedByAtSomeTime
+  replace: Core:observedByAtSomeTime
+  label: Core:observedByAtSomeTime (Object Property)
+- trigger: :Core:isSpecifiedOutputOf
+  replace: Core:isSpecifiedOutputOf
+  label: Core:isSpecifiedOutputOf (Object Property)
