@@ -1,7 +1,7 @@
 use std::{collections::{HashMap, HashSet}, env, fs::File, path::Path};
 
 use iri_s::IriS;
-use oxrdf::{IriParseError, NamedNode, Term};
+use oxrdf::{IriParseError, NamedNode, Subject, Term};
 use prefixmap::{PrefixMap, PrefixMapError};
 use serde::Serialize;
 use srdf::{SRDFBasic, SRDFGraph, SRDFGraphError, SRDF};
@@ -11,22 +11,33 @@ struct Matches {
     matches: Vec<MatchItem>
 }
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug)]
 struct MatchItem {
     trigger: String,
     replace: String,
     label: String,
 }
 
-fn find_subjects(graph: &SRDFGraph, pred: &<SRDFGraph as SRDFBasic>::IRI, object: &<SRDFGraph as SRDFBasic>::Term, label_type: &str, use_label_when_possible: bool) -> Result<Vec<MatchItem>, AppError> {
+#[derive(Debug)]
+struct Item {
+    qualified_name: String,
+    english_label: Option<String>,
+}
+
+enum SubjectType {
+    Class,
+    ObjectProperty
+}
+
+fn find_subjects(graph: &SRDFGraph, pred: &<SRDFGraph as SRDFBasic>::IRI, object: &<SRDFGraph as SRDFBasic>::Term) -> Result<Vec<Item>, AppError> {
     let pm = PrefixMap::from_hashmap(&HashMap::from([
-        ("Core", "https://spec.industrialontologies.org/ontology/core/Core/"),
+        ("iof-core", "https://spec.industrialontologies.org/ontology/core/Core/"),
         ("owl", "http://www.w3.org/2002/07/owl#"),
         ("bfo", "http://purl.obolibrary.org/obo/"),
     ]))?;
     let rdfs_label = NamedNode::new("http://www.w3.org/2000/01/rdf-schema#label")?;
 
-    let mut items: Vec<MatchItem> = Vec::new();
+    let mut items: Vec<Item> = Vec::new();
     for subject in graph.subjects_with_predicate_object(pred, object)? {
         let labels = graph.objects_for_subject_predicate(&subject, &rdfs_label)?;
         let english_label = get_english_label(&labels);
@@ -37,22 +48,12 @@ fn find_subjects(graph: &SRDFGraph, pred: &<SRDFGraph as SRDFBasic>::IRI, object
         };
         let qualified_name = pm.qualify(&subj_iri);
 
-        items.push(MatchItem {
-            trigger: if use_label_when_possible && english_label.is_some() {
-                format!(":{}", english_label.unwrap().replace(" ", "-"))
-            } else {
-                format!(":{}", qualified_name)
+        items.push(Item {
+            qualified_name: qualified_name.clone(),
+            english_label: match english_label {
+                Some(l) => Some(l.to_string()),
+                None => None,
             },
-            replace: if use_label_when_possible && english_label.is_some() {
-                format!("{} ({})", english_label.unwrap(), qualified_name)
-            } else {
-                qualified_name.clone()
-            },
-            label: if use_label_when_possible && english_label.is_some() {
-                format!("{} ({})", english_label.unwrap(), label_type)
-            } else {
-                format!("{} ({})", qualified_name, label_type)
-            }
         });
     }
     Ok(items)
@@ -74,11 +75,80 @@ fn get_english_label(labels: &HashSet<Term>) -> Option<&str> {
     None
 }
 
+// Return a shortname for the name.
+// If there are multiple words, the first letter of each word is used.
+fn get_shortname(name: String) -> String {
+    todo!()
+}
+
+fn get_bfo_short_number(name: &str) -> Result<i32, AppError> {
+    let tokens: Vec<&str> = name.split("_").collect();
+    if tokens.len() != 2 {
+        return Err(AppError::BfoNameParseError);
+    }
+    let number = tokens.get(1).unwrap().parse::<i32>().map_err(|_| AppError::BfoNameParseError)?;
+    Ok(number)
+}
+
+fn get_bfo_short_name(label: &str) -> String {
+    label.split(" ").flat_map(|t| t.chars().nth(0)).collect()
+}
+
+
+fn build_bfo_matches(subjects: Vec<Item>, subject_type: SubjectType) -> Result<Vec<MatchItem>, AppError> {
+    let mut match_items: Vec<MatchItem> = Vec::new();
+    for subject in subjects {
+        println!("{:#?}", subject);
+
+        let label = match subject_type {
+            SubjectType::Class => format!("bfo:{} (Class; {})", subject.english_label.clone().unwrap().replace(" ", "-"), subject.qualified_name.clone()),
+            SubjectType::ObjectProperty => format!("bfo:{} (Object Property; {})", subject.english_label.clone().unwrap().replace(" ", "-"), subject.qualified_name.clone()),
+        };
+
+        // Number-based trigger.
+        // e.g. :bfo-30 for object (http://purl.obolibrary.org/obo/BFO_0000030).
+        let short_number = get_bfo_short_number(&subject.qualified_name)?;
+        let match_item = MatchItem {
+            trigger: format!(":bfo-{}", short_number),
+            replace: subject.qualified_name.clone(),
+            label: label.clone(),
+        };
+        println!("{:#?}", match_item);
+        match_items.push(match_item);
+        let match_item = MatchItem {
+            trigger: format!(":bfo-{}", short_number),
+            replace: format!("bfo:{}", subject.english_label.clone().unwrap().replace(" ", "-")),
+            label: label.clone(),
+        };
+        println!("{:#?}", match_item);
+        match_items.push(match_item);
+
+        // Shortname-based trigger.
+        // e.g. :bfo-obj for object (http://purl.obolibrary.org/obo/BFO_0000030).
+        let short_name = get_bfo_short_name(&subject.english_label.clone().unwrap());
+        let match_item = MatchItem {
+            trigger: format!(":bfo-{}", short_name),
+            replace: subject.qualified_name.clone(),
+            label: label.clone(),
+        };
+        println!("{:#?}", match_item);
+        match_items.push(match_item);
+        let match_item = MatchItem {
+            trigger: format!(":bfo-{}", short_name),
+            replace: format!("bfo:{}", subject.english_label.clone().unwrap().replace(" ", "-")),
+            label: label,
+        };
+        println!("{:#?}", match_item);
+        match_items.push(match_item);
+    }
+    Ok(match_items)
+}
+
 fn main() {
     let args: Vec<String> = env::args().collect();
 
-    if args.len() != 2 {
-        println!("usage: {} <FILE>", args.get(0).unwrap());
+    if args.len() != 3 {
+        println!("usage: {} <FILE> <PREFIX>", args.get(0).unwrap());
         std::process::exit(1);
     }
 
@@ -87,19 +157,15 @@ fn main() {
         None => std::process::exit(1),
     };
     let path = Path::new(filename);
+
+    let prefix = match args.get(2) {
+        Some(p) => p,
+        None => std::process::exit(1),
+    };
+
     let graph = SRDFGraph::from_path(path, &srdf::RDFFormat::RDFXML, None, &srdf::ReaderMode::Lax).unwrap();
     
     println!("Graph's len: {}", graph.len());
-
-    // for quad in graph.quads() {
-    //     println!("{}", quad);
-    // }
-
-    let pm = PrefixMap::from_hashmap(&HashMap::from([
-        ("Core", "https://spec.industrialontologies.org/ontology/core/Core/"),
-        ("owl", "http://www.w3.org/2002/07/owl#"),
-        ("bfo", "http://purl.obolibrary.org/obo/"),
-    ])).unwrap();
 
     let owl_import = NamedNode::new("http://www.w3.org/2002/07/owl#imports").unwrap();
     let rdf_type = NamedNode::new("http://www.w3.org/1999/02/22-rdf-syntax-ns#type").unwrap();
@@ -114,15 +180,15 @@ fn main() {
     let use_label_when_possible: bool = true;
 
     let mut items: Vec<MatchItem> = Vec::new();
-    let result = find_subjects(&graph, &rdf_type, &Term::from(owl_class), "Class", use_label_when_possible);
+    let result = find_subjects(&graph, &rdf_type, &Term::from(owl_class));
     match result {
-        Ok(mut class_items) => items.append(&mut class_items),
+        Ok( subjects) => items.append(&mut build_bfo_matches(subjects, SubjectType::Class).unwrap()),
         Err(_) => panic!("failed to find subjects for Class")
     }
 
-    let result = find_subjects(&graph, &rdf_type, &Term::from(owl_object_property), "Object Property", use_label_when_possible);
+    let result = find_subjects(&graph, &rdf_type, &Term::from(owl_object_property));
     match result {
-        Ok(mut object_property_items) => items.append(&mut object_property_items),
+        Ok( subjects) => items.append(&mut build_bfo_matches(subjects, SubjectType::ObjectProperty).unwrap()),
         Err(_) => panic!("failed to find subjects for Object Property")
     }
 
@@ -138,24 +204,26 @@ fn main() {
     }
 }
 
+#[derive(Debug)]
 enum AppError {
-    AppError
+    AppError,
+    BfoNameParseError,
 }
 
 impl From<PrefixMapError> for AppError {
-    fn from(value: PrefixMapError) -> Self {
+    fn from(_: PrefixMapError) -> Self {
         AppError::AppError
     }
 }
 
 impl From<IriParseError> for AppError {
-    fn from(value: IriParseError) -> Self {
+    fn from(_: IriParseError) -> Self {
         AppError::AppError
     }
 }
 
 impl From<SRDFGraphError> for AppError {
-    fn from(value: SRDFGraphError) -> Self {
+    fn from(_: SRDFGraphError) -> Self {
         AppError::AppError
     }
 }
